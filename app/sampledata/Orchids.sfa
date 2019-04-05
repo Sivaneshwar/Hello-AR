@@ -1,0 +1,50 @@
+{
+  materials: [
+    {
+      name: 'Orchids_Mat',
+      parameters: [
+        {
+          baseColor: 'Orchids_BaseColor',
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0.5,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/Orchids.obj',
+    name: 'Orchids',
+    recenter: 'root',
+    scale: 0.13795099999999998,
+  },
+  samplers: [
+    {
+      file: 'sampledata\\Orchids_BaseColor.png',
+      name: 'Orchids_BaseColor',
+      pipeline_name: 'Orchids_BaseColor.png',
+    },
+  ],
+  version: '0.54:2',
+}

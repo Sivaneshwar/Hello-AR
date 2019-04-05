@@ -1,0 +1,50 @@
+{
+  materials: [
+    {
+      name: 'lambert3SG',
+      parameters: [
+        {
+          baseColor: 'Blender tex',
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0.5,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/Blender 2.obj',
+    name: 'Blender 2',
+    recenter: 'root',
+    scale: 0.0002830000000000008,
+  },
+  samplers: [
+    {
+      file: 'sampledata\\Blender tex.png',
+      name: 'Blender tex',
+      pipeline_name: 'Blender tex.png',
+    },
+  ],
+  version: '0.54:2',
+}
