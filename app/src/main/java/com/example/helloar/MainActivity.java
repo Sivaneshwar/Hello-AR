@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getSFBFile(int type){
-        String[] sfbFiles = {"Sofa.sfb", "Orchids.sfb", "Armoire.sfb", "ArcticFox_Posed.sfb"};
+        String[] sfbFiles = {"Couch.sfb", "Orchids.sfb", "Armoire.sfb", "ArcticFox_Posed.sfb"};
 
         if(type != -1)
             return sfbFiles[type - 1];

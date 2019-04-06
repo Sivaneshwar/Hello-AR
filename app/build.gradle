@@ -49,7 +49,7 @@ sceneform.asset('sampledata/Orchids.obj',
         'sampledata/Orchids.sfa',
         'src/main/assets/Orchids')
 
-sceneform.asset('sampledata/Sofa.obj',
+sceneform.asset('sampledata/Couch.obj',
         'default',
-        'sampledata/Sofa.sfa',
-        'src/main/assets/Sofa')
+        'sampledata/Couch.sfa',
+        'src/main/assets/Couch')
