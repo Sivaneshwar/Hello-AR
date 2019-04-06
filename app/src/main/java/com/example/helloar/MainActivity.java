@@ -1,5 +1,6 @@
 package com.example.helloar;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,15 +19,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+        String sfbFile = getSFBFile(intent.getIntExtra("type", -1));
+
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
             Anchor anchor = hitResult.createAnchor();
 
             ModelRenderable.builder()
-                    //.setSource( this, Uri.parse("ArcticFox_Posed.sfb"))
-                    .setSource( this, Uri.parse("Orchids.sfb"))
-                    //.setSource( this, Uri.parse("Blender 2.sfb"))
-                    //.setSource( this, Uri.parse("Armoire.sfb"))
+                    .setSource( this, Uri.parse(sfbFile))
                     .build()
                     .thenAccept(modelRenderable -> addModelToScene(anchor, modelRenderable))
                     .exceptionally(throwable ->{
@@ -45,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
         transformableNode.setRenderable(modelRenderable);
         arFragment.getArSceneView().getScene().addChild(anchorNode);
         transformableNode.select();
+    }
+
+    private String getSFBFile(int type){
+        String[] sfbFiles = {"Sofa.sfb", "Orchids.sfb", "Armoire.sfb", "ArcticFox_Posed.sfb"};
+
+        if(type != -1)
+            return sfbFiles[type - 1];
+        return null;
     }
 
 }

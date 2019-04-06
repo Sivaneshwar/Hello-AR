@@ -34,26 +34,20 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-
 sceneform.asset('sampledata/ArcticFox_Posed.obj',
         'default',
         'sampledata/ArcticFox_Posed.sfa',
         'src/main/assets/ArcticFox_Posed')
 
-sceneform.asset('sampledata/Orchids.obj',
-        'default',
-        'sampledata/Orchids.sfa',
-        'src/main/assets/Orchids')
-
-sceneform.asset('sampledata/Blender 2.obj',
-        'default',
-        'sampledata/Blender 2.sfa',
-        'src/main/assets/Blender 2')
-
 sceneform.asset('sampledata/Armoire.obj',
         'default',
         'sampledata/Armoire.sfa',
         'src/main/assets/Armoire')
+
+sceneform.asset('sampledata/Orchids.obj',
+        'default',
+        'sampledata/Orchids.sfa',
+        'src/main/assets/Orchids')
 
 sceneform.asset('sampledata/Sofa.obj',
         'default',

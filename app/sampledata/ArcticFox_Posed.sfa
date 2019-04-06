@@ -41,7 +41,7 @@
   },
   samplers: [
     {
-      file: 'sampledata\\ArcticFox_Diffuse.png',
+      file: 'sampledata/ArcticFox_Diffuse.png',
       name: 'ArcticFox_Diffuse',
       pipeline_name: 'ArcticFox_Diffuse.png',
     },

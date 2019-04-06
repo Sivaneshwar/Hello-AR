@@ -19,30 +19,32 @@ public class ChoiceActivity extends AppCompatActivity {
                 activityChanger(1);
             }
         });
-        Button b2 = (Button) findViewById(R.id.flower);
+
+       Button b2 = (Button) findViewById(R.id.flower);
         b2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-
                 activityChanger(2);
             }
         });
+
         Button b3 = (Button) findViewById(R.id.kitchen);
         b3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 activityChanger(3);
             }
         });
+
         Button b4 = (Button) findViewById(R.id.art);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 activityChanger(4);
             }
         });
-
     }
 
     private void activityChanger(int type){
         Intent intent = new Intent(ChoiceActivity.this, MainActivity.class);
+        intent.putExtra("type", type);
         startActivity(intent);
     }
 }
