@@ -63,7 +63,7 @@
     file: 'sampledata/Couch.obj',
     name: 'Couch',
     recenter: 'root',
-    scale: 0.5999999999999999e-05,
+    scale: 0.3999999999999999e-05,
   },
   version: '0.54:2',
 }

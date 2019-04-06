@@ -1,50 +1,35 @@
 package com.example.helloar;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChoiceActivity extends AppCompatActivity {
+
+    List<Items> itemsList;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice);
 
-        Button b1 = (Button) findViewById(R.id.sofa);
-        b1.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                activityChanger(1);
-            }
-        });
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-       Button b2 = (Button) findViewById(R.id.flower);
-        b2.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                activityChanger(2);
-            }
-        });
+        itemsList = new ArrayList<>();
 
-        Button b3 = (Button) findViewById(R.id.kitchen);
-        b3.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                activityChanger(3);
-            }
-        });
+        itemsList.add(new Items(1, "Sofa", 35.99, "Couch.sfb", R.drawable.couch_product_list, "sofa_card"));
+        itemsList.add(new Items(2, "Flower Pot", 19.99, "Orchids.sfb", R.drawable.orchid_product_list, "flower_card"));
+        itemsList.add(new Items(3, "Closet", 59.99, "Couch.sfb", R.drawable.armoire_product_list, "closet_card"));
+        itemsList.add(new Items(4, "Art Work", 39.99, "Couch.sfb", R.drawable.arcticfox_product_list, "art_card"));
 
-        Button b4 = (Button) findViewById(R.id.art);
-        b4.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                activityChanger(4);
-            }
-        });
-    }
-
-    private void activityChanger(int type){
-        Intent intent = new Intent(ChoiceActivity.this, MainActivity.class);
-        intent.putExtra("type", type);
-        startActivity(intent);
+        recyclerViewAdapter adapter = new recyclerViewAdapter(this, itemsList);
+        recyclerView.setAdapter(adapter);
     }
 }
